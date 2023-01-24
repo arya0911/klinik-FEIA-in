@@ -4,7 +4,7 @@ function kirim() {
     let form = document.getElementById("form");
     
     if(inp_nama == "admin" && inp_pass == "123456"){
-        form.setAttribute("action","admin.html");
+        form.setAttribute("action","siloker_backend1.html");
         alert("Login Berhasil");
     }else{
         alert("Login Gagal");

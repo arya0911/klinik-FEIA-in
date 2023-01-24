@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Daftar-Booking</title>
+  <title>Kelola-Data-Dokter</title>
   <link href="css/styles.css" rel="stylesheet" />
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet"
     crossorigin="anonymous" />
@@ -15,9 +15,6 @@
   <style>
     #lg {
       margin-left: 93%;
-    }
-    h2 {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
   </style>
 </head>
@@ -34,21 +31,19 @@
       <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
           <div class="nav">
-
             <center>
               <img src="assets/img/profil.png" alt="" width="100">
               <br>
               Fadilah Admin
             </center>
             <br>
-
             <form class="form-inline">
               <input class="form-control mr-sm-2 ml-2" type="search" placeholder="Search" aria-label="Search" />
             </form>
             <ul class="nav nav-pills nav-sidebar flex-column mt-3" data-widget="treeview" role="menu"
               data-accordion="false">
               <li class="nav-item menu-open">
-                <a href="siloker_backend1.html" class="nav-link active">
+                <a href="siloker_backend1.html" class="nav-link">
                   <i class="fa-solid fa-calendar-days mr-3"></i>
                   Booking
                 </a>
@@ -66,7 +61,7 @@
                 </a>
               </li>
               <li class="nav-item menu-open">
-                <a href="login.html" class="nav-link">
+                <a href="index.html" class="nav-link">
                   <i class="fa-solid fa-right-from-bracket mr-3"></i>
                   Logout
                 </a>
@@ -84,7 +79,6 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid">
-
           <center>
             <h2 class="mt-4"> <img src="assets/img/gigi.png" alt="" width="70">Klinik Kesehatan Gigi FEIA - Depok</h2>
           </center>
@@ -93,7 +87,7 @@
           </button>
           <div class="card mt-2 mb-4">
             <div class="card-header">
-              <h2 class="ml-4">Daftar Booking</h2>
+              <h2 class="ml-4">Kelola Data Dokter</h2>
               <ul class="nav nav-item justify-content-end">
                 <li class="nav-item">
                   <a class="nav-link" href="#">Home</a>
@@ -102,7 +96,7 @@
                   <a class="nav-link" href="siloker_backend1.html">Admin</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="siloker_backend1.html">Booking</a>
+                  <a class="nav-link active" href="siloker_backend2.html">Data Dokter</a>
                 </li>
               </ul>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -116,7 +110,7 @@
                 <div class="modal-content">
                   <!-- Modal Header -->
                   <div class="modal-header">
-                    <h4 class="modal-title">Tambah Daftar Booking</h4>
+                    <h4 class="modal-title">Tambah Daftar Dokter FEIA</h4>
                     <button type="button" class="close" data-dismiss="modal">
                       &times;
                     </button>
@@ -125,13 +119,13 @@
                   <!-- Modal body -->
                   <form method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-                      <input type="text" name="namapasien" placeholder="Nama Pasien" class="form-control" required />
+                      <input type="text" name="namadokter" placeholder="Nama Dokter" class="form-control" required />
                       <br />
-                      <input type="text" name="hppasien" placeholder="HP Pasien" class="form-control" required />
+                      <input type="text" name="genderdokter" placeholder="Gender" class="form-control" required />
                       <br />
-                      <input type="text" name="dokter" placeholder="Dokter" class="form-control" required />
+                      <input type="text" name="keahlian" placeholder="Keahlian" class="form-control" required />
                       <br />
-                      <input type="text" name="layanan" placeholder="Layanan" class="form-control" required />
+                      <input type="text" name="telpondokter" placeholder="Telpon" class="form-control" required />
                       <br />
                       <button type="submit" class="btn btn-primary" name="add">
                         Submit
@@ -148,22 +142,20 @@
                   <thead>
                     <tr>
                       <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Nama Pasien</th>
-                      <th>HP Pasien</th>
-                      <th>Dokter</th>
-                      <th>Layanan</th>
+                      <th>Nama Dokter</th>
+                      <th>Gender</th>
+                      <th>Keahlian</th>
+                      <th>Telpon</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>21-jan-2023</td>
-                      <td>Ali</td>
-                      <td>08812345678</td>
                       <td>Drg. Fadilah</td>
-                      <td>Pencabutan Gigi Anak</td>
+                      <td>Perempuan</td>
+                      <td>Spesialis Gigi Anak</td>
+                      <td>08812345678</td>
                       <td>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                           data-target="#detaill<?= $idb; ?>">
@@ -181,11 +173,10 @@
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>22-jan-2023</td>
-                      <td>Harfa</td>
-                      <td>08887654321</td>
                       <td>Drg. Erina</td>
-                      <td>Pembersihan Karang Gigi</td>
+                      <td>Perempuan</td>
+                      <td>Spesialis Gigi Anak</td>
+                      <td>08887654321</td>
                       <td>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                           data-target="#detaill<?= $idb; ?>">
@@ -203,11 +194,10 @@
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>23-jan-2023</td>
-                      <td>Zahran</td>
-                      <td>08887654321</td>
                       <td>Drg. Iqlima</td>
-                      <td>Pemasangan Behel</td>
+                      <td>Perempuan</td>
+                      <td>Spesialis Gigi Anak</td>
+                      <td>08843211234</td>
                       <td>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                           data-target="#detaill<?= $idb; ?>">
@@ -225,11 +215,10 @@
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>24-jan-2023</td>
-                      <td>Ramadhan</td>
-                      <td>08887654321</td>
                       <td>Drg. Arya</td>
-                      <td>Pencabutan Gigi Dewasa</td>
+                      <td>Laki-Laki</td>
+                      <td>Spesialis Gigi Anak</td>
+                      <td>08898766789</td>
                       <td>
                         <button type="button" class="btn btn-info" data-toggle="modal"
                           data-target="#detaill<?= $idb; ?>">
